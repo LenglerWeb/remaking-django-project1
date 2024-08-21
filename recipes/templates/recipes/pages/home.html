@@ -1,19 +1,23 @@
 {% include "recipes/partials/head.html" %}
 
 <body>
-    <header class="main-header-container">
-        <div class="main-header container">
-            <h1>
-                <a href="/">
-                    <i class="fa-solid fa-chess-knight"></i>
-                    <span>Recipes</span>
-                </a>
-            </h1>
+    {% include "recipes/partials/header.html" %}
+    {% include "recipes/partials/search.html" %}
+
+    <main class="main-content-container">
+        <div class="main-content main-content-list container">
+            <div class="recipe recipe-list-item">
+                <div class="recipe-cover">
+                    <img src="https://via.placeholder.com/1280x720.png/269fe6" alt="Temporario">
+                </div>
+                <h1>OI</h1>
+            </div>
         </div>
-    </header>
+    </main>
 
 
-    <p>Este é o meu primeiro parágrafo.</p>
+
+    
 </body>
 
 </html>
