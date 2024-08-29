@@ -3,41 +3,41 @@
         <img src="https://via.placeholder.com/1280x720.png/269fe6" alt="Temporario">
     </div>
     <div class="recipe-title-container">
-        <h2 class="recipe-title">Lorem Ipsum é uma simulação de texto</h2>
+        <h2 class="recipe-title">{{ recipe.title }}</h2>
     </div>
 
     <div class="recipe-author">
         <span class="recipe-author-item">
             <i class="fas fa-user"></i>
-                Eduardo Lengler
+                {{ recipe.author.first_name }} {{ recipe.author.last_name }}
         </span>
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
-                23/08/2024 às 14:28
+                {{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}
         </span>
         <span class="recipe-author-item">
             <a href="/recipes/category/cafe-da-manha/">
                 <i class="fas fa-layer-group"></i>
-                <span>Café da manhã</span>
+                <span>{{ recipe.category.name }}</span>
             </a>
         </span>
     </div>
 
     <div class="recipe-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>{{ recipe.description }}</p>
     </div>
 
     <div class="recipe-meta-container">
         <div class="recipe-meta recipe-preparation">
             <h3 class="recipe-meta-title"><i class="fa-solid fa-stopwatch"></i> Tempo de preparo</h3>
             <div class="recipe-meta-text">
-                0 Minutos
+                {{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
             <h3 class="recipe-meta-title"><i class="fa-solid fa-pizza-slice"></i>Porções</h3>
             <div class="recipe-meta-text">
-                0 Porções
+                {{ recipe.servings }} {{ recipe.servings_unit }}
             </div>
         </div>
     </div>
